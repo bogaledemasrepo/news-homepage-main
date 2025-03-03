@@ -1,8 +1,29 @@
 import Button from "./components/Button";
+import Card from "./components/Card";
 import Header from "./components/Header";
 import NewsCard from "./components/NewsCard";
 
 function App() {
+  const cards = [
+    {
+      img: "./assets/images/image-retro-pcs.jpg",
+      title: "01",
+      subtitle: "Reviving Retro PCs",
+      disc: "What happens when old PCs are given modern upgrades?",
+    },
+    {
+      img: "./assets/images/image-top-laptops.jpg",
+      title: "02",
+      subtitle: "Top 10 Laptops of 2022",
+      disc: "Our best picks for various needs and budgets.",
+    },
+    {
+      img: "./assets/images/image-gaming-growth.jpg",
+      title: "03",
+      subtitle: "The Growth of Gaming",
+      disc: "How the pandemic has sparked fresh opportunities.",
+    },
+  ];
   return (
     <div className="w-full p-10 container mx-auto lg:mt-4">
       <div className="">
@@ -30,7 +51,11 @@ function App() {
           </div>
           <NewsCard />
         </main>
-        <div className="">Cards</div>
+        <div className="w-full grid md:grid-cols-2 xl:grid-cols-3 gap-4 mt-16 mb-8">
+          {cards.map((Item) => (
+            <Card key={Item.title} {...Item} />
+          ))}
+        </div>
 
         <div className="text-center text-slate-500 py-8">
           Challenge by
