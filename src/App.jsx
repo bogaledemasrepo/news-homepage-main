@@ -1,8 +1,10 @@
+import Header from "./components/Header";
+
 function App() {
   return (
     <div className="w-full p-10 container mx-auto lg:mt-4">
       <div className="">
-        <header>Header</header>
+        <Header />
         <main>Main</main>
         <div className="">Cards</div>
 
